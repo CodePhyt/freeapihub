@@ -6,7 +6,6 @@ import {
   CheckCircle2,
   Info,
   Linkedin,
-  Github,
   Rocket,
   Cpu
 } from 'lucide-react';
@@ -44,9 +43,6 @@ export const ProvidersOverview = () => {
           <div className="social-links">
             <a href="https://www.linkedin.com/in/osmankadir/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="inline-block" />
-            </a>
-            <a href="https://github.com/CodePhyt" target="_blank" rel="noopener noreferrer">
-              <Github className="inline-block" />
             </a>
           </div>
         </div>
@@ -115,7 +111,7 @@ export const ProvidersOverview = () => {
                         <div className="space-y-4">
                           {provider.limits.length > 0 && (
                             <div>
-                              <h4 className="font-medium text-sm text-muted-foreground mb-2">Provider Limits:</h4>
+                              <h4 className="font-medium text-sm text-white mb-2">Provider Limits:</h4>
                               <ul className="space-y-1">
                                 {provider.limits.map((limit, idx) => (
                                   <motion.li
@@ -141,14 +137,14 @@ export const ProvidersOverview = () => {
                                     <AccordionTrigger className="text-sm hover:text-cyber-blue group">
                                       <div className="flex items-center gap-2">
                                         <Cpu className="h-4 w-4 text-matrix-green group-hover:text-cyber-blue" />
-                                        {model.name}
+                                        <span className="text-white">{model.name}</span>
                                       </div>
                                     </AccordionTrigger>
                                     {model.limits && (
                                       <AccordionContent>
                                         <ul className="space-y-1 pl-4">
                                           {model.limits.map((limit, limitIdx) => (
-                                            <li key={limitIdx} className="text-sm text-matrix-green">
+                                            <li key={limitIdx} className="text-sm text-white">
                                               • {limit}
                                             </li>
                                           ))}
@@ -208,7 +204,7 @@ export const ProvidersOverview = () => {
                         <div className="space-y-4">
                           <div>
                             <h4 className="font-medium text-sm text-cyber-blue mb-2">Trial Credits:</h4>
-                            <p className="text-sm text-matrix-green">{provider.credits}</p>
+                            <p className="text-sm text-white">{provider.credits}</p>
                           </div>
 
                           <div>
@@ -217,11 +213,11 @@ export const ProvidersOverview = () => {
                               {provider.models.map((model, idx) => (
                                 <motion.li
                                   key={idx}
-                                  className="text-sm text-matrix-green flex items-center gap-2"
+                                  className="text-sm text-white flex items-center gap-2"
                                   whileHover={{ x: 5 }}
                                   transition={{ type: "spring", stiffness: 300 }}
                                 >
-                                  <Cpu className="h-4 w-4" />
+                                  <Cpu className="h-4 w-4 text-matrix-green" />
                                   {model}
                                 </motion.li>
                               ))}
@@ -279,7 +275,7 @@ export const ProvidersOverview = () => {
                               {provider.features.map((feature, idx) => (
                                 <motion.li
                                   key={idx}
-                                  className="text-sm text-matrix-green flex items-center gap-2"
+                                  className="text-sm text-white flex items-center gap-2"
                                   whileHover={{ x: 5 }}
                                   transition={{ type: "spring", stiffness: 300 }}
                                 >
