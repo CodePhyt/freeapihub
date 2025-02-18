@@ -263,7 +263,7 @@ export const ProvidersOverview = () => {
                           <div>
                             <h4 className="font-medium text-sm text-muted-foreground mb-2">Available Models:</h4>
                             <div className="flex flex-wrap gap-2">
-                              {provider.models.map((model, idx) => (
+                              {provider.models.map((model: string, idx: number) => (
                                 <motion.div
                                   key={idx}
                                   whileHover={{ scale: 1.05 }}
@@ -315,7 +315,7 @@ export const ProvidersOverview = () => {
                           <div>
                             <h4 className="font-medium text-sm text-muted-foreground mb-2">Features:</h4>
                             <ul className="space-y-1">
-                              {provider.features.map((feature, idx) => (
+                              {provider.features.map((feature: string, idx: number) => (
                                 <motion.li
                                   key={idx}
                                   className="text-sm flex items-center gap-2"
