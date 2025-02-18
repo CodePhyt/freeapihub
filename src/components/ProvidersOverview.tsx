@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
 import { 
-  ExternalLink, 
-  Cpu, 
   Cloud, 
-  Search,
   CheckCircle2,
-  AlertCircle,
   Info
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
