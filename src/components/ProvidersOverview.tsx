@@ -35,9 +35,9 @@ export const ProvidersOverview = () => {
   );
 
   return (
-    <div className="cyber-theme min-h-screen">
+    <div className="cyber-theme min-h-screen relative">
       <MatrixBackground />
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 relative z-10">
         <div className="mb-8 text-center fade-in-up">
           <h1 className="text-4xl font-bold mb-2">AI Model Providers</h1>
           <div className="social-links">
