@@ -7,7 +7,8 @@ import {
   Info,
   Linkedin,
   Github,
-  Rocket
+  Rocket,
+  Cpu
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -39,10 +40,7 @@ export const ProvidersOverview = () => {
       <MatrixBackground />
       <div className="container mx-auto p-4">
         <div className="mb-8 text-center fade-in-up">
-          <h1 className="text-4xl font-bold mb-2">Free AI Model Providers</h1>
-          <p className="text-muted-foreground">
-            Explore various AI model providers and their offerings
-          </p>
+          <h1 className="text-4xl font-bold mb-2">AI Model Providers</h1>
           <div className="social-links">
             <a href="https://www.linkedin.com/in/osmankadir/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="inline-block" />
@@ -135,19 +133,22 @@ export const ProvidersOverview = () => {
                           )}
 
                           <div>
-                            <h4 className="font-medium text-sm text-muted-foreground mb-2">Available Models:</h4>
-                            <ScrollArea className="h-[200px] bg-black/30 rounded p-2">
+                            <h4 className="font-medium text-sm text-cyber-blue mb-2">Available Models:</h4>
+                            <ScrollArea className="h-[200px] bg-black/50 rounded p-2 border border-matrix-green">
                               <Accordion type="single" collapsible>
                                 {provider.models.map((model, idx) => (
-                                  <AccordionItem key={idx} value={`model-${idx}`} className="border-matrix-green">
-                                    <AccordionTrigger className="text-sm hover:text-cyber-blue">
-                                      {model.name}
+                                  <AccordionItem key={idx} value={`model-${idx}`} className="border-matrix-green/50">
+                                    <AccordionTrigger className="text-sm hover:text-cyber-blue group">
+                                      <div className="flex items-center gap-2">
+                                        <Cpu className="h-4 w-4 text-matrix-green group-hover:text-cyber-blue" />
+                                        {model.name}
+                                      </div>
                                     </AccordionTrigger>
                                     {model.limits && (
                                       <AccordionContent>
                                         <ul className="space-y-1 pl-4">
                                           {model.limits.map((limit, limitIdx) => (
-                                            <li key={limitIdx} className="text-sm text-muted-foreground">
+                                            <li key={limitIdx} className="text-sm text-matrix-green">
                                               • {limit}
                                             </li>
                                           ))}
@@ -206,21 +207,22 @@ export const ProvidersOverview = () => {
                       <CardContent>
                         <div className="space-y-4">
                           <div>
-                            <h4 className="font-medium text-sm text-muted-foreground mb-2">Trial Credits:</h4>
-                            <p className="text-sm">{provider.credits}</p>
+                            <h4 className="font-medium text-sm text-cyber-blue mb-2">Trial Credits:</h4>
+                            <p className="text-sm text-matrix-green">{provider.credits}</p>
                           </div>
 
                           <div>
-                            <h4 className="font-medium text-sm text-muted-foreground mb-2">Available Models:</h4>
+                            <h4 className="font-medium text-sm text-cyber-blue mb-2">Available Models:</h4>
                             <ul className="space-y-1">
                               {provider.models.map((model, idx) => (
                                 <motion.li
                                   key={idx}
-                                  className="text-sm"
+                                  className="text-sm text-matrix-green flex items-center gap-2"
                                   whileHover={{ x: 5 }}
                                   transition={{ type: "spring", stiffness: 300 }}
                                 >
-                                  • {model}
+                                  <Cpu className="h-4 w-4" />
+                                  {model}
                                 </motion.li>
                               ))}
                             </ul>
@@ -272,12 +274,12 @@ export const ProvidersOverview = () => {
                       <CardContent>
                         <div className="space-y-4">
                           <div>
-                            <h4 className="font-medium text-sm text-muted-foreground mb-2">Features:</h4>
+                            <h4 className="font-medium text-sm text-cyber-blue mb-2">Features:</h4>
                             <ul className="space-y-1">
                               {provider.features.map((feature, idx) => (
                                 <motion.li
                                   key={idx}
-                                  className="text-sm flex items-center gap-2"
+                                  className="text-sm text-matrix-green flex items-center gap-2"
                                   whileHover={{ x: 5 }}
                                   transition={{ type: "spring", stiffness: 300 }}
                                 >

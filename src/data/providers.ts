@@ -41,6 +41,18 @@ export const providers: Provider[] = [
       {
         name: 'Claude-2',
         limits: ['1 request per minute']
+      },
+      {
+        name: 'Gemini Pro',
+        limits: ['2 requests per minute']
+      },
+      {
+        name: 'Mistral-Large',
+        limits: ['2 requests per minute']
+      },
+      {
+        name: 'Claude-3-Opus',
+        limits: ['1 request per minute']
       }
     ],
     link: 'https://openrouter.ai',
@@ -54,8 +66,24 @@ export const providers: Provider[] = [
     ],
     models: [
       {
-        name: 'Various open-source models',
-        limits: ['Rate limits based on instance type']
+        name: 'BERT',
+        limits: ['Instance type: CPU']
+      },
+      {
+        name: 'T5',
+        limits: ['Instance type: CPU/GPU']
+      },
+      {
+        name: 'Llama 2',
+        limits: ['Instance type: GPU']
+      },
+      {
+        name: 'Stable Diffusion',
+        limits: ['Instance type: GPU']
+      },
+      {
+        name: 'Whisper',
+        limits: ['Instance type: CPU']
       }
     ],
     link: 'https://huggingface.co/inference-endpoints',
@@ -102,11 +130,19 @@ export const providers: Provider[] = [
     ],
     models: [
       {
-        name: 'LLaMA 2',
+        name: 'LLaMA 2 70B',
         limits: ['Usage-based pricing']
       },
       {
-        name: 'Mixtral',
+        name: 'Mixtral 8x7B',
+        limits: ['Usage-based pricing']
+      },
+      {
+        name: 'Gemma 7B',
+        limits: ['Usage-based pricing']
+      },
+      {
+        name: 'Claude-3',
         limits: ['Usage-based pricing']
       }
     ],
